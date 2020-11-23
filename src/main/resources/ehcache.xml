@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="true"
+	monitoring="autodetect" dynamicConfig="true">
+
+	<diskStore path="java.io.tmpdir/shaka-fija" />
+	
+	<cache 
+   		name="offers_properties" 
+   		memoryStoreEvictionPolicy="LFU"
+		maxEntriesLocalHeap="8000" 
+		maxEntriesLocalDisk="2000" 
+		eternal="false"
+		timeToIdleSeconds="0" 
+		timeToLiveSeconds="86400"
+		transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+		
+		
+	</cache>
+	
+	<cache 
+   		name="equipment" 
+   		memoryStoreEvictionPolicy="LFU"
+		maxEntriesLocalHeap="8000" 
+		maxEntriesLocalDisk="2000" 
+		eternal="false"
+		timeToIdleSeconds="0" 
+		timeToLiveSeconds="86400"
+		transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	
+	<cache 
+   		name="plan_cid" 
+   		memoryStoreEvictionPolicy="LFU"
+		maxEntriesLocalHeap="8000" 
+		maxEntriesLocalDisk="2000" 
+		eternal="false"
+		timeToIdleSeconds="0" 
+		timeToLiveSeconds="86400"
+		transactionalMode="off">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+</ehcache>
