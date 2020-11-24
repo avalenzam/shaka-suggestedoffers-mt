@@ -2,7 +2,7 @@ package com.telefonica.somt.business.others;
 
 import org.springframework.stereotype.Component;
 
-import com.hazelcast.internal.util.StringUtil;
+import com.hazelcast.util.StringUtil;
 import com.telefonica.somt.commons.Constant;
 import com.telefonica.somt.commons.Util;
 import com.telefonica.somt.pojo.clientTenure.PublicIdResponse;

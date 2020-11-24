@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.hazelcast.internal.util.StringUtil;
+import com.hazelcast.util.StringUtil;
 import com.telefonica.somt.business.recurringPrice.ClientMaintainTenure;
 import com.telefonica.somt.commons.Constant;
 import com.telefonica.somt.commons.Util;

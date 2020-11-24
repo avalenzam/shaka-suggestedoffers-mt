@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.hazelcast.internal.util.StringUtil;
+import com.hazelcast.util.StringUtil;
 import com.telefonica.somt.dto.SuggestedOffersMtRequestDto;
 import com.telefonica.somt.entity.rtdm.CompoWithPropandvalidVal;
 import com.telefonica.somt.entity.rtdm.Offeringquaddetail;

@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hazelcast.internal.util.StringUtil;
+import com.hazelcast.util.StringUtil;
 import com.telefonica.somt.business.alta.Alta;
 import com.telefonica.somt.business.migration.Migration;
 import com.telefonica.somt.business.others.PublicId;

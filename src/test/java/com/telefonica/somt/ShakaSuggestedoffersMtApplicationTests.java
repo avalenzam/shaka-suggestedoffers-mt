@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.hazelcast.internal.util.StringUtil;
+import com.hazelcast.util.StringUtil;
 import com.telefonica.somt.business.others.PublicId;
 import com.telefonica.somt.business.recurringPrice.ClientMaintainTenure;
 import com.telefonica.somt.business.variables.CustomerProduct.CustomerProductVariable;

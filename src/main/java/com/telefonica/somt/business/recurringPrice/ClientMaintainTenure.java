@@ -7,7 +7,7 @@ import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.hazelcast.internal.util.StringUtil;
+import com.hazelcast.util.StringUtil;
 import com.telefonica.somt.commons.Util;
 import com.telefonica.somt.entity.rtdm.PriceProperties;
 import com.telefonica.somt.entity.rtdm.RelationsMaster;
