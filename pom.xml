@@ -12,10 +12,11 @@
 	<groupId>com.telefonica.pe</groupId>
 	<artifactId>shaka-suggestedoffers-mt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<!-- <packaging>war</packaging> -->
+	<packaging>jar</packaging>
 	<name>shaka-suggestedoffers-mt</name>
 	<description>Demo project for Spring Boot</description>
-	
+
 	<properties>
 		<java.version>1.8</java.version>
 		<swagger-template.name>Product Catalog Management_v3.3.0_swagger.yaml</swagger-template.name>
@@ -25,6 +26,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -71,10 +78,11 @@
 		</dependency>
 		<!-- ORACLE DRIVER -->
 		<!-- https://mvnrepository.com/artifact/com.oracle.jdbc/ojdbc7 -->
+		<!-- <dependency> <groupId>com.oracle</groupId> <artifactId>ojdbc7</artifactId> 
+			<version>12.1.0.2</version> </dependency> -->
 		<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc7</artifactId>
-			<version>12.1.0.2</version>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc8</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.zaxxer</groupId>
@@ -83,23 +91,23 @@
 		<!-- Swagger -->
 		<dependency>
 			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>2.9.2</version>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.9.2</version>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>3.0.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.github.joschi.jackson</groupId>
 			<artifactId>jackson-datatype-threetenbp</artifactId>
 			<version>2.6.4</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.plugin</groupId>
-			<artifactId>spring-plugin-core</artifactId>
-			<version>2.0.0.RELEASE</version>
 		</dependency>
 
 		<dependency>
@@ -140,39 +148,20 @@
 		</dependency>
 
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>io.swagger</groupId>
-				<artifactId>swagger-codegen-maven-plugin</artifactId>
-				<version>2.2.2</version>
-				<executions>
-					<execution>
-						<id>execution-ProductCatalogManagement</id>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-						<configuration>
-							<inputSpec>${project.basedir}/src/main/resources/static/${swagger-template.name}</inputSpec>
-							<language>spring</language>
-							<generateSupportingFiles>false</generateSupportingFiles>
-							<configOptions>
-								<java8>false</java8>
-								<library>spring-boot</library>
-								<dateLibrary>joda</dateLibrary>
-								<apiPackage>com.telefonica.somt.generated.api</apiPackage>
-								<modelPackage>com.telefonica.somt.generated.model</modelPackage>
-								<serializableModel>true</serializableModel>
-							</configOptions>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
+			<!-- <plugin> <groupId>io.swagger</groupId> <artifactId>swagger-codegen-maven-plugin</artifactId> 
+				<version>2.2.2</version> <executions> <execution> <id>execution-ProductCatalogManagement</id> 
+				<goals> <goal>generate</goal> </goals> <configuration> <inputSpec>${project.basedir}/src/main/resources/static/${swagger-template.name}</inputSpec> 
+				<language>spring</language> <generateSupportingFiles>false</generateSupportingFiles> 
+				<configOptions> <java8>false</java8> <library>spring-boot</library> <dateLibrary>joda</dateLibrary> 
+				<apiPackage>com.telefonica.somt.generated.api</apiPackage> <modelPackage>com.telefonica.somt.generated.model</modelPackage> 
+				<serializableModel>true</serializableModel> </configOptions> </configuration> 
+				</execution> </executions> </plugin> -->
 		</plugins>
 		<pluginManagement>
 			<plugins>
